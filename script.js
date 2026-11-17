@@ -1,12 +1,12 @@
-const tempoEmMinutos = 500;
-const blocosTempo = Math.floor(tempoEmMinutos / 30);
-console.log("Blocos de Tempo:", blocosTempo);
+function calcularQuest(tempoEmMinutos){
 
-let xp=0;
+const blocosTempo = Math.floor(tempoEmMinutos / 30);
+let xp;
 let tipoDeQuest;
+
 if (tempoEmMinutos <= 120) { 
     tipoDeQuest = "Anomalia";
-    if (blocosTempo === 0 ){
+    if (blocosTempo === 0 ){    
         xp = 30;
         }  else {
             xp = blocosTempo * 30;
@@ -30,9 +30,13 @@ else {
 
 }
 
-console.log("Tipo de Quest:", tipoDeQuest);
-console.log("xp:", xp);
+return {tipo: TipoDeQuest, xp: xp};
 
+}
 
-// Regra de XP para uma Anomalia
-
+console.log(calcularQuest(20));
+console.log(calcularQuest(120));
+console.log(calcularQuest(121));
+console.log(calcularQuest(479));
+console.log(calcularQuest(480));
+console.log(calcularQuest(630));
